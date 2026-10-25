@@ -42259,6 +42259,24 @@ ErrorReporter.set_game(GameName)
                     Callback = RivalsModsState.EnsureHooks,
                 })
                 DepGrenadeFuse:SetupDependencies({{ Toggles.P4S1T6, true }})
+
+                -- UI-only controls requested: no callbacks or gameplay behavior.
+                P4S1:AddToggle('P4S1T8', {
+                    Text = 'Always Backstab',
+                    Default = false,
+                    Tooltip = 'UI placeholder only; this control has no function attached.',
+                })
+
+                P4S1:AddSlider('P4S1S6', {
+                    Text = 'Melee Range Expander',
+                    Default = 0,
+                    Min = 0,
+                    Max = 20,
+                    Rounding = 0,
+                    Suffix = ' studs',
+                    Compact = true,
+                    Tooltip = 'UI placeholder only; this slider has no function attached.',
+                })
             end
 
             BuildRivalsVisualsUi = function(Window)
@@ -45192,6 +45210,8 @@ ErrorReporter.set_game(GameName)
                     { idx = 'P4S1T6', type = 'Toggle', value = false },
                     { idx = 'P4S1D1', type = 'Dropdown', value = 'Impact' },
                     { idx = 'P4S1T7', type = 'Toggle', value = false },
+                    { idx = 'P4S1T8', type = 'Toggle', value = false },
+                    { idx = 'P4S1S6', type = 'Slider', value = 0 },
                     { idx = 'P4S2T2', type = 'Toggle', value = true },
                     { idx = 'P4S2S2', type = 'Slider', value = 85 },
                     { idx = 'P4S2T3', type = 'Toggle', value = true },
